@@ -33,9 +33,9 @@ class Scraper
        self.get_page.css(".post")
     end
 
-    def make_courses 
+    def make_courses
       self.get_courses.each do |post|
-        course = Course.new 
+        course = Course.new
         course.schedule = post.css(".date").text
         course.title = post.css("h2").text
         course.description = post.css("p").text
@@ -44,4 +44,4 @@ class Scraper
 
 end
 
-Scraper.new.get_page
+#Scraper.new.get_page
